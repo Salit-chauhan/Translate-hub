@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Translator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white min-h-screen transition-colors"
+  >
+    <div class="max-w-2xl mx-auto py-12 px-6">
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold">🌍 Translator Pro</h1>
+        <button
+          id="theme-toggle"
+          class="bg-gray-200 dark:bg-gray-700 p-2 rounded-full"
+        >
+          🌙
+        </button>
+      </div>
+
+      <!-- Form -->
+      <div class="space-y-4 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+        <label class="block font-semibold">Enter text</label>
+        <textarea
+          id="text-input"
+          rows="4"
+          class="w-full p-3 rounded-md bg-gray-100 dark:bg-gray-700 dark:text-white resize-y outline-none"
+        ></textarea>
+
+        <div class="flex flex-col md:flex-row md:items-center gap-4">
+          <div class="flex-1">
+            <label class="block font-semibold">Translate to</label>
+            <select
+              id="lang-select"
+              class="w-full p-3 rounded-md bg-gray-100 dark:bg-gray-700 dark:text-white"
+            >
+              <!-- Options populated via JS with all ISO 639-1 codes -->
+            </select>
+          </div>
+
+          <button
+            id="swap-btn"
+            class="mt-2 md:mt-6 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-md"
+          >
+            🔄 Swap
+          </button>
+        </div>
+
+        <button
+          id="translate-btn"
+          class="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-md mt-4"
+        >
+          🚀 Translate
+        </button>
+
+        <!-- Output -->
+        <div
+          id="result-box"
+          class="min-h-[80px] bg-gray-50 dark:bg-gray-700 p-4 rounded-md mt-4 text-lg whitespace-pre-wrap"
+        >
+          Translation will appear here...
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
